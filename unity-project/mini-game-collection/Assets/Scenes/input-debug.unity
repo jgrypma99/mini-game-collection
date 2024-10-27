@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 983119774}
   m_Layer: 5
-  m_Name: 'Area: Menu'
+  m_Name: 'Area: Debug'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 1791736126}
   - component: {fileID: 1791736125}
   m_Layer: 5
-  m_Name: 'Text: Mode Select'
+  m_Name: 'Text: Input Debug'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
