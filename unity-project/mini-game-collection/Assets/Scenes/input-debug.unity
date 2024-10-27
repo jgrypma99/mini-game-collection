@@ -708,17 +708,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Display>k__BackingField: {fileID: 1791736126}
-  <Inputs>k__BackingField:
-  - P1_Horizontal
-  - P1_Vertical
-  - P1_Action1
-  - P1_Action2
-  - P1_Horizontal
-  - P1_Vertical
-  - P1_Action1
-  - P1_Action2
-  - Submit
-  - Cancel
 --- !u!114 &1791736126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,10 +728,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <input display>
+  m_text: 'P1_AxisX..:  0.000
+
+    P1_AxisY..:  0.000
+
+    P1_Action1:  OFF
+
+    P1_Action2: 
+    OFF
+
+    P2_AxisX..:  0.000
+
+    P2_AxisY..:  0.000
+
+    P2_Action1:  OFF
+
+    P2_Action2: 
+    OFF
+
+    Submit....:  OFF
+
+    Cancel....:  OFF
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5572527c26cb1b418fbe2dfe51fef48, type: 2}
+  m_sharedMaterial: {fileID: 1459042968235025588, guid: d5572527c26cb1b418fbe2dfe51fef48,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

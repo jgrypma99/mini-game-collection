@@ -37,7 +37,7 @@ public class DebugInput : MonoBehaviour
             string inputDisplay = input.PadRight(max, '.');
             string inputValue = input.Contains("Axis")
                 ? Input.GetAxis(input).ToString("+0.000;-0.000; 0.000") // axis
-                : Input.GetButton(input) ? "ON" : "OFF"; // button
+                : Input.GetButton(input) ? " ON" : " OFF"; // button
             string value = $"{inputDisplay}: {inputValue}\n";
             stringBuilder.Append(value);
         }
@@ -54,5 +54,14 @@ public class DebugInput : MonoBehaviour
                 max = input.Length;
         }
         return max;
+    }
+
+    private void OnValidate()
+    {
+        if (Display == null)
+            return;
+
+        if (string.IsNullOrEmpty(Display.text))
+            Update();
     }
 }
