@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 232757486}
   - component: {fileID: 232757487}
   m_Layer: 5
-  m_Name: 'Infinite Play '
+  m_Name: 'Button: Infinite Play '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,8 +294,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 232757487}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: Activate
+        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 410380220}
   - component: {fileID: 410380219}
   m_Layer: 5
-  m_Name: Mode Select (Text)
+  m_Name: 'Text: Mode Select'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542413700}
   m_Layer: 5
-  m_Name: Menu Area
+  m_Name: 'Area: Menu'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 877927414}
   - component: {fileID: 877927415}
   m_Layer: 5
-  m_Name: Mode Select Area
+  m_Name: 'Area: Mode Select'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -918,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930992660}
   m_Layer: 5
-  m_Name: Title Area
+  m_Name: 'Area: Title'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 1149025769}
   - component: {fileID: 1149025768}
   m_Layer: 5
-  m_Name: Title (Text)
+  m_Name: 'Text: Title'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 1936840924}
   - component: {fileID: 1936840925}
   m_Layer: 5
-  m_Name: Select Scene
+  m_Name: 'Button: Select Scene'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,8 +1436,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1936840925}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: Activate
+        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

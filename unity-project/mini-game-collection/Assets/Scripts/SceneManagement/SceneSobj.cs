@@ -12,7 +12,6 @@ namespace MiniGameCollection.SceneManagement
         public SceneSobj(Scene scene)
         {
             SceneName = scene.name;
-            BuildIndex = scene.buildIndex;
         }
 
         public static implicit operator string(SceneSobj sceneSobj)
@@ -34,22 +33,6 @@ namespace MiniGameCollection.SceneManagement
         /// </summary>
         [field: SerializeField]
         public string SceneName { get; set; }
-
-        /// <summary>
-        ///     UnityEditor.SceneAsset build index.
-        /// </summary>
-        /// <remarks>
-        ///     DO NOT TRUST. Unity's scene management is unreliable and will likely return -1
-        ///     even if the scene is in the build.
-        /// </remarks>
-        [field: SerializeField]
-        public int BuildIndex { get; set; } = -1;
-
-        /// <summary>
-        ///     Returns the scene using sceneAsset's name since buildIndex is unreliable.
-        /// </summary>
-        public Scene Scene => SceneManager.GetSceneByName(SceneName);
-
 
         public override string ToString()
         {

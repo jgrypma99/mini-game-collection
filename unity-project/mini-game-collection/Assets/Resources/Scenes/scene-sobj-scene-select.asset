@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75299669b2479194d8170c021683fda6, type: 3}
   m_Name: scene-sobj-scene-select
   m_EditorClassIdentifier: 
-  <SceneAsset>k__BackingField: {fileID: 102900000, guid: 371b210ee7b605b4dadadf8fb47c8562,
+  <SceneAsset>k__BackingField: {fileID: 102900000, guid: df736276ae4fe924cb0cde4c586d4c47,
     type: 3}
   <SceneName>k__BackingField: scene-select
-  <BuildIndex>k__BackingField: -1

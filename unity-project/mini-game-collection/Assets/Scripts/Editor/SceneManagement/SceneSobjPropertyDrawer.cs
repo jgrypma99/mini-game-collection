@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEditor;
 
 namespace MiniGameCollection.SceneManagement.Editor
@@ -23,33 +22,11 @@ namespace MiniGameCollection.SceneManagement.Editor
 
             // Set scriptable object values based on SceneAsset values
             SceneAsset sceneAsset = sobj.SceneAsset as SceneAsset;
-            if (sceneAsset != null)
-            {
-                sobj.SceneName = sceneAsset.name;
-                sobj.BuildIndex = SceneManager.GetSceneByName(sceneAsset.name).buildIndex;
-            }
-            else
-            {
-                sobj.SceneName = "";
-                sobj.BuildIndex = -1;
-            }
+            sobj.SceneName = sceneAsset == null ? "" : sceneAsset.name;
 
-            //// Get the property
-            //SceneAsset sceneAsset = sobj.SceneAsset as SceneAsset;
-            //string sceneName = sceneAsset == null ? "" : sceneAsset.name;
-            //int buildIndex = sceneAsset == null ? -1 : SceneManager.GetSceneByName(sceneName).buildIndex;
-
-            //// Read-only view
+            // Read-only view
             GUI.enabled = false;
-            //EditorGUILayout.Separator();
-            //EditorGUILayout.LabelField("Scene Asset", EditorStyles.boldLabel);
-            //EditorGUILayout.TextField("Scene Name", sceneName);
-            //EditorGUILayout.IntField("Build Index", buildIndex);
-            EditorGUILayout.Separator();
-            EditorGUILayout.Separator();
-            EditorGUILayout.LabelField("ScriptableObject Cache", EditorStyles.boldLabel);
             EditorGUILayout.TextField("Scene Name", sobj.SceneName);
-            EditorGUILayout.IntField("Build Index", sobj.BuildIndex);
             GUI.enabled = true;
 
             // Save changes

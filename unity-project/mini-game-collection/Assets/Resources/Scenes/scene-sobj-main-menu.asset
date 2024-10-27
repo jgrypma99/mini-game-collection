@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SceneAsset>k__BackingField: {fileID: 102900000, guid: df736276ae4fe924cb0cde4c586d4c47,
     type: 3}
-  <SceneName>k__BackingField: main-menu
-  <BuildIndex>k__BackingField: -1
+  <SceneName>k__BackingField: scene-select

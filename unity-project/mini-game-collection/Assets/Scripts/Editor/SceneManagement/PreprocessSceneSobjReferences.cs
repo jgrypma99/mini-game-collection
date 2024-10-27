@@ -50,7 +50,6 @@ namespace MiniGameCollection.SceneManagement.Editor
                         AssetDatabase.RenameAsset(assetPath, sceneFileName);
                         sobjAsset.SceneAsset = sceneAsset;
                         sobjAsset.SceneName = sceneName;
-                        sobjAsset.BuildIndex = sceneBuildIndex;
                         EditorUtility.SetDirty(sobjAsset);
                         AssetDatabase.SaveAssets();
                     }
