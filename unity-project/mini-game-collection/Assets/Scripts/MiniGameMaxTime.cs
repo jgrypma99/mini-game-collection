@@ -1,7 +1,7 @@
 ﻿namespace MiniGameCollection
 {
     /// <summary>
-    ///     Defines how maximum length of minigame,
+    ///     Defines maximum length of minigame.
     /// </summary>
     public enum MiniGameMaxTime : int
     {

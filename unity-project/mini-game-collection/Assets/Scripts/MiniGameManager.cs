@@ -56,6 +56,12 @@ namespace MiniGameCollection
         [field: SerializeField]
         public MiniGameWinner Winner { get; set; } = MiniGameWinner.Unset;
 
+        [field: Header("Metadata")]
+        [field: SerializeField]
+        [field: Tooltip("Student names that contributed to making this mini game.")]
+        public string[] AuthorCredits { get; private set; } = { "Firstname Lastname" };
+
+
         // Properties
         public int TimeInt => (int)Math.Ceiling(TimeFloat);
         public bool IsCountingDown => State == MiniGameManagerState.InCountDown;
