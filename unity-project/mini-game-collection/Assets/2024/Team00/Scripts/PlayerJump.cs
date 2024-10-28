@@ -11,16 +11,37 @@ namespace MiniGameCollection.Games2024.Team00
         private bool ControlsActive { get; set; }
 
         [field: SerializeField]
-        private Rigidbody Rigidbody { get; set; }
+        private AnimationCurve JumpCurve { get; set; }
 
         [field: SerializeField]
-        private float Force { get; set; } = 10;
+        private float MaxJumpHeight { get; set; } = 5;
 
-        private int ID => PlayerID - 1;
-        private bool DoJump;
+        [field: SerializeField]
+        private float JumpSpeed { get; set; } = 0.7f;
+
+        public int ID => PlayerID - 1;
+        public bool DoJump { get; private set; }
+        public bool IsJumping { get; private set; }
+        public float AnimationTime { get; private set; }
+        public Vector3 InitialPosition { get; private set; }
+        public float MaxGameTime { get; private set; }
+        public float TimeRemaining { get; private set; }
+        public float GameSpeed => (1 - TimeRemaining / MaxGameTime) + 1; // TODO: put in function
+        public float JumpCurveTime => JumpCurve.keys[^1].time;
+
+        protected override void OnTimerInitialized(int maxGameTime)
+        {
+            MaxGameTime = maxGameTime;
+        }
+
+        protected override void OnTimerUpdate(float timeRemaining)
+        {
+            TimeRemaining = timeRemaining;
+        }
 
         protected override void OnGameStart()
         {
+            InitialPosition = transform.position;
             ControlsActive = true;
         }
 
@@ -31,44 +52,32 @@ namespace MiniGameCollection.Games2024.Team00
 
         private void Update()
         {
-            if (ArcadeInput.Players[ID].Action1.Down)
+            // Do jumping animation
+            if (IsJumping)
             {
-                DoJump = true;
-            }
-        }
+                // Add to animation
+                AnimationTime += Time.deltaTime * GameSpeed * JumpCurveTime / JumpSpeed;
+                float jumpHeight = JumpCurve.Evaluate(AnimationTime) * MaxJumpHeight;
+                transform.position = InitialPosition + Vector3.up * jumpHeight;
 
-        private void FixedUpdate()
-        {
+                if (AnimationTime >= JumpCurveTime)
+                {
+                    AnimationTime = 0;
+                    IsJumping = false;
+                }
+            }
+
+            // Don't run update if controls not enabled
             if (!ControlsActive)
                 return;
 
-            if (!DoJump)
-                return;
-            DoJump = false;
-
-            if (!IsGrounded())
-                return;
-
-            Vector3 force = Vector3.up * Force * Rigidbody.mass;
-            Rigidbody.AddForce(force, ForceMode.Impulse);
-        }
-
-        private bool IsGrounded()
-        {
-            float distance = 0.1f;
-            float halfDistance = distance / 2;
-            Vector3 origin = transform.position + Vector3.up * halfDistance;
-            Vector3 direction = Vector3.down;
-            int layerMask = ~0;
-            bool hit = Physics.Raycast(origin, direction, out RaycastHit hitInfo, distance, layerMask, QueryTriggerInteraction.Ignore);
-            
-            if (hitInfo.rigidbody == Rigidbody)
+            // See if player should jump
+            bool doJump = ArcadeInput.Players[ID].Action1.Down;
+            if (doJump && !IsJumping)
             {
-                Debug.LogError("TODO: make mask ignore self.");
-                Debug.Break();
+                IsJumping = true;
             }
-
-            return hit;
         }
+
     }
 }
