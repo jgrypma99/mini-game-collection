@@ -148,6 +148,7 @@ Assets/Plugins/**       linguist-vendored
 
 # Documents
 *.pdf                   lfs
+*.vsdx                  lfs
 
 # ETC
 *.a                     lfs
