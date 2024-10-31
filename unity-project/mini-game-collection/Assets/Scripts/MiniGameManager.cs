@@ -14,14 +14,14 @@ namespace MiniGameCollection
         public delegate void DisplayWinner(MiniGameWinner winner);
 
         // Events, ordered by occurence
-        public TimerUpdateInt OnTimerInit;
-        public TimerMessage OnCountDown;
-        public TimerEvent OnGameStart;
-        public TimerUpdateFloat OnTimerUpdateFloat;
-        public TimerUpdateInt OnTimerUpdateInt;
-        public TimerEvent OnGameEnd;
-        public DisplayWinner OnGameWinner;
-        public TimerEvent OnGameClose;
+        public event TimerUpdateInt OnTimerInit;
+        public event TimerMessage OnCountDown;
+        public event TimerEvent OnGameStart;
+        public event TimerUpdateFloat OnTimerUpdateFloat;
+        public event TimerUpdateInt OnTimerUpdateInt;
+        public event TimerEvent OnGameEnd;
+        public event DisplayWinner OnGameWinner;
+        public event TimerEvent OnGameClose;
 
         // Private state
         private int PreviousIntTime { get; set; } = -1;

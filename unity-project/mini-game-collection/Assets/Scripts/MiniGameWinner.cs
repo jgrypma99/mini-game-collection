@@ -3,23 +3,28 @@
     public enum MiniGameWinner
     {
         /// <summary>
-        ///     
+        ///     Default: Unset means no winner was decided. For error checking purposes.
         /// </summary>
-        Unset,
+        Unset = 0,
 
         /// <summary>
-        ///     
+        ///     Neither player wins.
         /// </summary>
-        Draw,
+        Draw = -426543985,
 
         /// <summary>
-        ///     
+        ///     Player 1 wins.
         /// </summary>
-        Player1,
+        Player1 = 1742563677,
 
         /// <summary>
-        ///     
+        ///     Player 2 wins.
         /// </summary>
-        Player2,
+        Player2 = 1543533201,
+
+        /// <summary>
+        ///     Both players win.
+        /// </summary>
+        Both = 607761912,
     }
 }
